@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Student - SAPMS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <h1>🎓 Edit Student</h1>
+    <p>Update details for Student ID: <strong>{{ student.StudentID }}</strong></p>
+</header>
+
+<!-- Navigation -->
+<nav>
+    <a href="/">Dashboard</a>
+    <a href="{{ url_for('view_students') }}">← Back to Students</a>
+</nav>
+
+<!-- Main Content -->
+<main class="form-main">
+    <div class="form-container">
+        <h2>Edit Student Information</h2>
+
+        <!-- Edit Form -->
+        <form method="POST">
+            <!-- Student ID (disabled) -->
+            <label for="student_id">Student ID:</label>
+            <input type="number" id="student_id" value="{{ student.StudentID }}" disabled>
+
+            <!-- Full Name -->
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" value="{{ student.Name }}" required placeholder="e.g., Alice Johnson">
+
+            <!-- Email Address -->
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" value="{{ student.Email }}" required placeholder="e.g., alice@example.com">
+
+            <!-- Date of Birth -->
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob"
+                   value="{{ student.DOB.strftime('%Y-%m-%d') if student.DOB else '' }}" required>
+
+            <!-- Submit Button -->
+            <button type="submit">Update Student</button>
+        </form>
+    </div>
+</main>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2025 SAPMS | Designed by Isabel Muachefe</p>
+</footer>
+
+</body>
+</html>

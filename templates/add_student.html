@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Student - SAPMS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header>
+    <h1>🎓 Student Academic Performance Management System</h1>
+    <p>Add New Student</p>
+</header>
+
+<nav>
+    <a href="/">Dashboard</a>
+    <a href="/students">View Students</a>
+</nav>
+
+<main class="form-container">
+    <div class="form-card">
+        <h2>➕ Add New Student</h2>
+        <form method="POST">
+            <label for="student_id">Student ID:</label>
+            <input type="number" id="student_id" name="student_id" required placeholder="e.g., 1001">
+
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required placeholder="e.g., Alice Johnson">
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required placeholder="e.g., alice@example.com">
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <button type="submit">Add Student</button>
+        </form>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2025 SAPMS | Designed by isabel Muachefe</p>
+</footer>
+
+</body>
+</html>

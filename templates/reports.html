@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Performance Reports - SAPMS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header>
+    <h1>📊 Student Academic Performance Management System (SAPMS)</h1>
+    <p>Performance Reports: Top Students & Attendance Stats</p>
+</header>
+
+<nav>
+    <a href="/">Dashboard</a>
+</nav>
+
+<main class="reports-main">
+    
+    <!-- Top Performing Students -->
+    <section class="report-section">
+        <h2 class="section-title"><i class="fas fa-trophy"></i> Top Performing Students</h2>
+        <div class="table-wrapper">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Average Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for student in top_students %}
+                    <tr>
+                        <td>{{ student.studentid }}</td>
+                        <td>{{ student.name }}</td>
+                        <td>{{ "%.2f"|format(student.average_score) }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Attendance Stats -->
+    <section class="report-section">
+        <h2 class="section-title"><i class="fas fa-calendar-check"></i> Attendance Statistics</h2>
+        <div class="table-wrapper">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Total Classes</th>
+                        <th>Attendance %</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in attendance %}
+                    <tr>
+                        <td>{{ row.studentid }}</td>
+                        <td>{{ row.name }}</td>
+                        <td>{{ row.TotalClasses }}</td>
+                        <td>{{ "%.2f"|format(row.attendance_percentage) }}%</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>&copy; 2025 SAPMS | Designed by Isabel Muachefe</p>
+</footer>
+
+</body>
+</html>

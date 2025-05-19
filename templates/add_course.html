@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Course - SAPMS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header>
+    <h1>🎓 Student Academic Performance Management System</h1>
+    <p>Add New Course</p>
+</header>
+
+<nav>
+    <a href="/">Dashboard</a>
+    <a href="/courses">View Courses</a>
+</nav>
+
+<main class="form-container">
+    <div class="form-card">
+        <h2>📘 Add New Course</h2>
+        <form method="POST">
+            <label for="course_id">Course ID:</label>
+            <input type="number" id="course_id" name="course_id" required placeholder="e.g., 101">
+
+            <label for="course_name">Course Name:</label>
+            <input type="text" id="course_name" name="course_name" required placeholder="e.g., Database Systems">
+
+            <label for="credits">Credit Hours:</label>
+            <input type="number" id="credits" name="credits" required min="1" max="6" placeholder="e.g., 3">
+
+            <label for="lecturer_id">Lecturer ID:</label>
+            <input type="number" id="lecturer_id" name="lecturer_id" required placeholder="e.g., 1">
+
+            <button type="submit">Add Course</button>
+        </form>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2025 SAPMS | Designed by isabel muachefe</p>
+</footer>
+
+</body>
+</html>

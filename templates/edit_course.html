@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Course - SAPMS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header>
+    <h1>📘 Edit Course</h1>
+    <p>Update details for Course ID: {{ course.CourseID }}</p>
+</header>
+
+<nav>
+    <a href="/">Dashboard</a>
+    <a href="{{ url_for('view_courses') }}">← Back to Courses</a>
+</nav>
+
+<main class="form-main">
+    <div class="form-container">
+        <h2>Edit Course Information</h2>
+        <form method="POST">
+            <label for="course_id">Course ID:</label>
+            <input type="number" id="course_id" value="{{ course.CourseID }}" disabled>
+
+            <label for="course_name">Course Name:</label>
+            <input type="text" id="course_name" name="course_name" value="{{ course.CourseName }}" required>
+
+            <label for="credits">Credit Hours:</label>
+            <input type="number" id="credits" name="credits" value="{{ course.Credits }}" min="1" max="6" required>
+
+            <label for="lecturer_id">Lecturer ID:</label>
+            <input type="number" id="lecturer_id" name="lecturer_id" value="{{ course.LecturerID }}" required>
+
+            <button type="submit">Update Course</button>
+        </form>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2025 SAPMS | Designed by Isabel Muachefe</p>
+</footer>
+
+</body>
+</html>

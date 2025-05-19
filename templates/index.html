@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SAPMS Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<header>
+    <h1>🎓 Student Academic Performance Management System (SAPMS)</h1>
+    <p>Your one-stop dashboard for managing student records, courses, and performance reports.</p>
+</header>
+
+<nav>
+    <a href="/students">Manage Students</a>
+    <a href="/courses">Manage Courses</a>
+    <a href="/add_student">Add Student</a>
+    <a href="/add_course">Add Course</a>
+    <a href="/reports">Performance Reports</a>
+</nav>
+
+<main class="dashboard">
+    <div class="card">
+        <h2>📘 Manage Students</h2>
+        <p>Add, view, or edit student records in the system.</p>
+        <a href="/students" class="btn">Go to Students</a>
+    </div>
+
+    <div class="card">
+        <h2>📚 Manage Courses</h2>
+        <p>Register new courses or assign lecturers to them.</p>
+        <a href="/courses" class="btn">Go to Courses</a>
+    </div>
+
+    <div class="card">
+        <h2>📊 Performance Reports</h2>
+        <p>View top-performing students, GPA, and attendance stats.</p>
+        <a href="/reports" class="btn">View Reports</a>
+    </div>
+
+    <div class="card">
+        <h2>➕ Quick Actions</h2>
+        <ul>
+            <li><a href="/add_student">Add New Student</a></li>
+            <li><a href="/add_course">Add New Course</a></li>
+            <li><a href="/reports">Generate Reports</a></li>
+        </ul>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2025 SAPMS | Designed by Isabel Muachefe - Data Science</p>
+</footer>
+
+</body>
+</html>
